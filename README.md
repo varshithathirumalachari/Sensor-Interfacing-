@@ -33,7 +33,12 @@ Step13:Click start button and check the output
 >>Using this time and the speed of sound in air, we can find the distance of the object using a simple formula for distance using speed and time.
 For more information about ultrasonic module HC-SR04 and how to use it, refer the topic Ultrasonic Module HC-SR04 in the sensors and modules section.
 ```
+Working of HC-SR04
+The HC-SR04 emits ultrasonic waves at 40,000 Hz. In order to make it emit waves, we need to give a 10 microseconds HIGH pulse at the Trigger pin. The module responds by emitting a sonic burst of 8 pulses. This 8-pulse pattern helps differentiate the pulses emitted by the module from the ambient noise. As soon as the pulses are transmitted, the ECHO pin goes HIGH, and stays HIGH till all the reflected pulses are received. The module times out after 38ms, if all the reflected pulses are not received in this duration.
+![image](https://user-images.githubusercontent.com/131793193/235342103-b80b23e6-a91b-4323-9b6c-13b9230aab21.png)
+The following timing diagram explains the behavior of the module −
 
+The time for which the Echo pin remains HIGH can help determine the distance of the sensor from the reflecting surface. The speed of sound in air is 340 m/s, or 0.034 cm/ microsecond. If the ECHO pin stays HIGH for, say 100 microseconds, then the distance travelled by the waves is: 100*0.034 = 3.4cm. Therefore, the distance from the surface is 3.4/2 = 1.7 cm (since the waves reflect back from the surface and cover the same distance again)
 ## PROGRAM:
 ```
 ## CIRCUIT DIAGRAM:
